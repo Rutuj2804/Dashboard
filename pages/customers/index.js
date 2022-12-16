@@ -61,7 +61,7 @@ const Customers = () => {
                 <title>Customers - deep</title>
             </Head>
             <main>
-                <div className="flex justify-between items-center customers__Wrapper hidden md:flex">
+                <div className="justify-between items-center customers__Wrapper hidden md:flex">
                     <div className="left">
                         <div className="tab active">Active (200)</div>
                         <div className="tab">Deleted (19)</div>

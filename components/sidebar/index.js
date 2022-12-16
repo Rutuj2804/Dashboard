@@ -58,6 +58,15 @@ const sidebarData = [
             { name: "Spendings", icon: <CreditCardIcon className="h-5 w-5" />, link: "/spendings" },
         ],
     },
+    {
+        name: "Charts",
+        links: [
+            { name: "Bar Chart", icon: <ChartPieIcon className="h-5 w-5" />, link: "/chart/bar" },
+            { name: "Line Chart", icon: <CreditCardIcon className="h-5 w-5" />, link: "/chart/line" },
+            { name: "Pie Chart", icon: <CreditCardIcon className="h-5 w-5" />, link: "/chart/pie" },
+            { name: "Bump Chart", icon: <CreditCardIcon className="h-5 w-5" />, link: "/chart/bump" },
+        ],
+    },
 ];
 
 const Sidebar = () => {

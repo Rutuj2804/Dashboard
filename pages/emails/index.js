@@ -35,7 +35,7 @@ const Emails = () => {
                 <title>Emails - deep</title>
             </Head>
             <main>
-                <div className="flex justify-between items-center customers__Wrapper hidden sm:hidden md:flex lg:flex">
+                <div className=" justify-between items-center customers__Wrapper hidden sm:hidden md:flex lg:flex">
                     <div className="left">
                         <div className="tab active">Primary (200)</div>
                         <div className="tab">Promotional (19)</div>
