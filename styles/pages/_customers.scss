@@ -1,0 +1,30 @@
+.customers__Wrapper{
+    margin-top: 1rem;
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .tab{
+            padding: 5px 15px;
+            border: 1px solid $primary;
+            border-radius: 2px;
+            color: $primary;
+            font-weight: 600;
+            cursor: pointer;
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+        .active {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+    }
+}

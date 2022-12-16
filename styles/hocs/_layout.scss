@@ -1,0 +1,19 @@
+.layout{
+    .main {
+        position: absolute;
+        top: 0%;
+        left: 300px;
+        width: calc(100% - 300px);
+        padding: 0 20px;
+    }
+}
+
+.toggle-layout {
+    .main {
+        position: absolute;
+        top: 0%;
+        left: 60px;
+        width: calc(100% - 60px);
+        padding: 0 20px;
+    }
+}

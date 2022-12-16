@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./fonts";
+
+@import "./variables";
+
+@import "./hocs/layout";
+
+@import "./components/sidebar";
+@import "./components/navbar";
+@import "./components/logo";
+@import "./components/paper";
+@import "./components/card";
+@import "./components/inbox";
+@import "./components/message-area";
+
+@import "./pages/customers";
+@import "./pages/events";
+@import "./pages/insights";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+}
