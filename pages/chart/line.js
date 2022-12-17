@@ -11,7 +11,7 @@ const Line = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Charts"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div>

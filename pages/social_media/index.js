@@ -69,7 +69,7 @@ const SocialMedia = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Social Media"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div>
@@ -79,7 +79,7 @@ const SocialMedia = () => {
             <main>
                 <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-4'>
                     {
-                        cardsData.map(c=>(<Cards count={c.count} name={c.name} percentage={c.percentage} isDown={c.isDown} icon={c.icon} />))
+                        cardsData.map((c, i)=>(<Cards key={i} count={c.count} name={c.name} percentage={c.percentage} isDown={c.isDown} icon={c.icon} />))
                     }
                 </div>
                 <div className='grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4'>

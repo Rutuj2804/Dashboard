@@ -11,7 +11,7 @@ const Bump = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Charts"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div>

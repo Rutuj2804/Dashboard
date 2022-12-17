@@ -7,22 +7,28 @@
     height: 100vh;
     z-index: 99;
     transition: all .2s linear;
+    overflow-y: scroll;
+    // overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
     &:hover .pannel {
         visibility: visible;
-    }
-    .pannel{
-        position: absolute;
-        top: 70px;
-        left: calc(100% - 15px);
-        height: 30px;
-        width: 30px;
-        background-color: $white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        box-shadow: 0 0 5px 2px $shadow;
-        cursor: pointer;
     }
     .middle {
         margin: 20px;
@@ -77,4 +83,23 @@
             }
         }
     }
+}
+.pannel{
+    position: absolute;
+    top: 70px;
+    left: calc(300px - 15px);
+    height: 30px;
+    width: 30px;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 2px $shadow;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.toggle-layout .pannel {
+    left: 45px;
 }

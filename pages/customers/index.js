@@ -53,7 +53,7 @@ const Customers = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Customers"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div>

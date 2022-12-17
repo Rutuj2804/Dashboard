@@ -3,28 +3,20 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 
-const Register = () => {
+const Login = () => {
     return (
         <div className="auth__Wrapper">
             <Head>
                 <title>
-                    Register - deep
+                    Login - deep
                 </title>
             </Head>
             <div className='auth__Box'>
                 <div className="header">
                     <h4>deep</h4>
-                    <p>Register to create a account</p>
+                    <p>Login to continue...</p>
                 </div>
                 <form>
-                    <div className='auth__InputBox'>
-                        <input type="text" required />
-                        <label>First name</label>
-                    </div>
-                    <div className='auth__InputBox'>
-                        <input type="text" required />
-                        <label>Last name</label>
-                    </div>
                     <div className='auth__InputBox'>
                         <input type="text" required />
                         <label>Username</label>
@@ -34,22 +26,22 @@ const Register = () => {
                         <label>Password</label>
                     </div>
                     <div className='auth__Dialouge'>
-                        <p>By registering you agree to our terms and conditions</p>
+                        <Link href="forgetpassword">Forgot password?</Link>
                     </div>
                     <div className='auth__Button'>
-                        <Button type='submit'>Register</Button>
+                        <Button type='submit'>Login</Button>
                     </div>
                 </form>
                 <div className='auth__Links'>
-                    <p>Already have an account? <Link href="/auth/login">Login now</Link></p>
+                    <p>Don't have an account? <Link href="/auth/register">Register now</Link></p>
                 </div>
             </div>
         </div>
     )
 }
 
-Register.getLayout = (page) => {
+Login.getLayout = (page) => {
     return <>{page}</>
 }
 
-export default Register
+export default Login

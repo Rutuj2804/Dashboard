@@ -11,7 +11,7 @@ const Insights = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Insights"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div>

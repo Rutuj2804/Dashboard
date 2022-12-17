@@ -11,7 +11,7 @@ const Bar = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Charts"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div>

@@ -12,6 +12,9 @@ import {
     PaperAirplaneIcon,
     Squares2X2Icon,
     UsersIcon,
+    ChartBarIcon,
+    PresentationChartLineIcon,
+    PresentationChartBarIcon
 } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../../store/settings"
@@ -61,10 +64,10 @@ const sidebarData = [
     {
         name: "Charts",
         links: [
-            { name: "Bar Chart", icon: <ChartPieIcon className="h-5 w-5" />, link: "/chart/bar" },
-            { name: "Line Chart", icon: <CreditCardIcon className="h-5 w-5" />, link: "/chart/line" },
-            { name: "Pie Chart", icon: <CreditCardIcon className="h-5 w-5" />, link: "/chart/pie" },
-            { name: "Bump Chart", icon: <CreditCardIcon className="h-5 w-5" />, link: "/chart/bump" },
+            { name: "Bar Chart", icon: <ChartBarIcon className="h-5 w-5" />, link: "/chart/bar" },
+            { name: "Line Chart", icon: <PresentationChartLineIcon className="h-5 w-5" />, link: "/chart/line" },
+            { name: "Pie Chart", icon: <ChartPieIcon className="h-5 w-5" />, link: "/chart/pie" },
+            { name: "Bump Chart", icon: <PresentationChartBarIcon className="h-5 w-5" />, link: "/chart/bump" },
         ],
     },
 ];
@@ -76,24 +79,26 @@ const Sidebar = () => {
     const sidebar = useSelector(state=>state.settings.sidebar)
 
     return (
-        <div className="sidebar__Wrapper">
-            <div className="">
-                <Logo />
+        <>
+            <div className="sidebar__Wrapper">
+                <div className="">
+                    <Logo />
+                </div>
+                <div className="middle">
+                    {sidebarData.map((a) => (
+                        <>
+                            <span className="category">{a.name}</span>
+                            {a.links.map((b, i) => (
+                                <NavLink key={i} name={b.name} icon={b.icon} link={b.link} />
+                            ))}
+                        </>
+                    ))}
+                </div>
             </div>
             <div className="pannel" onClick={()=>dispatch(toggleSidebar())}>
                 {sidebar ? <ChevronLeftIcon className="h-5 w-5" />: <ChevronRightIcon className="h-5 w-5" />}
             </div>
-            <div className="middle">
-                {sidebarData.map((a) => (
-                    <>
-                        <span className="category">{a.name}</span>
-                        {a.links.map((b) => (
-                            <NavLink name={b.name} icon={b.icon} link={b.link} />
-                        ))}
-                    </>
-                ))}
-            </div>
-        </div>
+        </>
     );
 };
 

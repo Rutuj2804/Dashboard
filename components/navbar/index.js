@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
     BellIcon,
     Cog6ToothIcon,
+    KeyIcon,
     MagnifyingGlassIcon,
     UserIcon,
 } from "@heroicons/react/24/outline";
@@ -11,10 +12,12 @@ import {
     MoonIcon,
     SunIcon,
     WrenchScrewdriverIcon,
+    UserIcon as UserSolid
 } from "@heroicons/react/24/solid";
 import { Fullscreen } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDisplayMode } from "../../store/settings";
+import { useRouter } from "next/router";
 
 const notificationData = [
     { name: "Jon Snow", message: "Posted on his social media" },
@@ -27,9 +30,12 @@ const notificationData = [
 const Navbar = () => {
     const [settingsPanel, setSettingsPanel] = useState(false);
     const [notificationPanel, setNotificationPanel] = useState(false);
+    const [profile, setProfile] = useState(false);
 
     const header = useSelector((state) => state.settings.header);
     const darkMode = useSelector((state) => state.settings.darkMode);
+
+    const router = useRouter()
 
     const dispatch = useDispatch();
 
@@ -95,11 +101,29 @@ const Navbar = () => {
                     )}
                 </div>
                 <div className="dropdown">
-                    <IconButton>
+                    <IconButton onClick={()=>setProfile(v=>!v)}>
                         <Badge badgeContent={4} color="error">
                             <UserIcon className="h-6 w-6 text-black" />
                         </Badge>
                     </IconButton>
+                    {profile && <div className="menu">
+                        <div className="item">
+                            <h6>Profile</h6>
+                            <UserSolid className="h-5 w-5 " />
+                        </div>
+                        <div className="item" onClick={()=>router.push("/auth/login")}>
+                            <h6>Login Page</h6>
+                            <BoltIcon className="h-5 w-5 text-balck" />
+                        </div>
+                        <div className="item" onClick={()=>router.push("/auth/register")}>
+                            <h6>Register Page</h6>
+                            <WrenchScrewdriverIcon className="h-5 w-5 text-balck" />
+                        </div>
+                        <div className="item" onClick={()=>router.push("/auth/forgetpassword")}>
+                            <h6>Forget Password Page</h6>
+                            <KeyIcon className="h-5 w-5 text-balck" />
+                        </div>
+                    </div>}
                 </div>
             </div>
         </div>

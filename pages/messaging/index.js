@@ -11,7 +11,7 @@ const Messaging = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Messaging"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div>

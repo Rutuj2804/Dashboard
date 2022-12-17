@@ -27,7 +27,7 @@ const Emails = () => {
 
     useEffect(() => {
         dispatch(setHeader("Emails"));
-    }, []);
+    }, [dispatch]);
 
     return (
         <div>

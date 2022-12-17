@@ -10,7 +10,7 @@ const Events = () => {
 
     useEffect(()=>{
         dispatch(setHeader("Events"))
-    }, [])
+    }, [dispatch])
 
     return (
         <div className='events__Wrapper'>
