@@ -33,7 +33,7 @@ const Login = () => {
                     </div>
                 </form>
                 <div className='auth__Links'>
-                    <p>Don't have an account? <Link href="/auth/register">Register now</Link></p>
+                    <p>Don&apos;t have an account? <Link href="/auth/register">Register now</Link></p>
                 </div>
             </div>
         </div>
